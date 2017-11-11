@@ -21,10 +21,12 @@ public class AWSControllerTest {
 
   @Before
   public void setUp() throws Exception {
+	Thread.sleep(30000);
     driver = new HtmlUnitDriver();
     		//System.setProperty("webdriver.firefox.marionette","C:\\geckodriver.exe");
 			 System.setProperty("webdriver.chrome.driver","C:\\FFDC\\chromedriver.exe");
- driver = new HtmlUnitDriver();
+ 	//driver = new ChromeDriver();
+ driver = new HtmlUnitDriver(true);
     baseUrl = "http://127.0.0.1/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
@@ -32,7 +34,7 @@ public class AWSControllerTest {
   @Test
   public void testAWSController() throws Exception {
     driver.get(baseUrl + "/");
-Thread.sleep(1000);
+Thread.sleep(3000);
     driver.findElement(By.xpath("(//input[@id='username'])[3]")).clear();
     driver.findElement(By.xpath("(//input[@id='username'])[3]")).sendKeys("manish");
     driver.findElement(By.xpath("(//input[@id='password'])[3]")).clear();
@@ -69,8 +71,6 @@ action.moveToElement(element).click().perform();/* /html/body/nav/div/div[2]/div
 
 
 
-    driver.findElement(By.cssSelector("i.icon-minus4")).click();
-	Thread.sleep(2000);
    System.out.println( driver.findElement(By.id("projectinput1")).getText().trim());
 	try {
 		driver.findElement(By.cssSelector("i.icon-plus4")).click();
