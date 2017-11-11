@@ -21,7 +21,7 @@ public class AWSControllerTest {
 
   @Before
   public void setUp() throws Exception {
-//	Thread.sleep(30000);
+	Thread.sleep(10000);
     driver = new HtmlUnitDriver();
     		//System.setProperty("webdriver.firefox.marionette","C:\\geckodriver.exe");
 			 System.setProperty("webdriver.chrome.driver","C:\\FFDC\\chromedriver.exe");
