@@ -24,7 +24,7 @@ public class AWSControllerTest {
     driver = new HtmlUnitDriver();
     		//System.setProperty("webdriver.firefox.marionette","C:\\geckodriver.exe");
 			 System.setProperty("webdriver.chrome.driver","C:\\FFDC\\chromedriver.exe");
- driver = new ChromeDriver();
+ driver = new HtmlUnitDriver();
     baseUrl = "http://localhost/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
