@@ -1,0 +1,48 @@
+{
+    "networkMode": "host",
+
+    "containerDefinitions": [
+        {
+            "volumesFrom": [],
+              "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80,
+                    "protocol": "tcp"
+                },
+                {
+                    "hostPort": 443,
+                    "containerPort": 443,
+                    "protocol": "tcp"
+                }
+            ],
+             "mountPoints": [],
+            "name": "ffdccontainer",
+
+            "environment": [
+                {
+                    "name": "JDBC_URL",
+                    "value": "jdbc:mysql://jdbc:mysql://ffdc1.mysql.database.azure.com:3306/ffdc?useOldAliasMetadataBehavior=true&&zeroDateTimeBehavior=convertToNull"
+                },
+                {
+                    "name": "ECS_AVAILABLE_LOGGING_DRIVERS",
+                    "value": "'[\"json-file\",\"awslogs\"]'"
+                }
+            ],
+            "image": "272461118117.dkr.ecr.ap-south-1.amazonaws.com/finefeather:vesrionofbuild",
+
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "FFDCSERVICE",
+                    "awslogs-region": "ap-south-1",
+                    "awslogs-stream-prefix": "FFDCAPI"
+                }
+            },
+            "cpu": 0,
+           "memoryReservation": 384
+        }
+    ],  "volumes": [],
+    "family": "ffdctask",
+    "placementConstraints": []
+}
