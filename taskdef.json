@@ -34,15 +34,15 @@
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
-                    "awslogs-group": "FFDCSERVICE",
+                    "awslogs-group": "FFWEB",
                     "awslogs-region": "ap-south-1",
-                    "awslogs-stream-prefix": "FFDCAPI"
+                    "awslogs-stream-prefix": "FFWEB"
                 }
             },
             "cpu": 0,
            "memoryReservation": 384
         }
     ],  "volumes": [],
-    "family": "ffdctask",
+    "family": "ffwebtask",
     "placementConstraints": []
 }
