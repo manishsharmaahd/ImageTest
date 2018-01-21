@@ -25,6 +25,10 @@
                     "value": "jdbc:mysql://jdbc:mysql://ffdc1.mysql.database.azure.com:3306/ffdc?useOldAliasMetadataBehavior=true&&zeroDateTimeBehavior=convertToNull"
                 },
                 {
+                    "name": "REDIS_HOST",
+                    "value": "13.126.176.209"
+                },
+                {
                     "name": "ECS_AVAILABLE_LOGGING_DRIVERS",
                     "value": "'[\"json-file\",\"awslogs\"]'"
                 }
